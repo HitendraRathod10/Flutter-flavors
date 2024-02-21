@@ -43,6 +43,87 @@ android {
         versionName flutterVersionName
     }
 
+    flavorDimensions "app"
+    productFlavors {
+        adminDevelopment {
+            dimension "app"
+            applicationId "com.example.admin.dev"
+            versionCode flutterVersionCode.toInteger()
+            versionName flutterVersionName
+            copy {
+                from 'src/adminDevelopment/'
+                include '*.json'
+                into '.'
+            }
+            resValue "string", "app_name", ""
+        }
+
+        adminStage {
+            dimension "app"
+            applicationId "com.example.admin.stg"
+            versionCode flutterVersionCode.toInteger()
+            versionName flutterVersionName
+            copy {
+                from 'src/adminStage/'
+                include '*.json'
+                into '.'
+            }
+            resValue "string", "app_name", ""
+        }
+
+        adminProduction {
+            dimension "app"
+            applicationId "com.example.admin.prod"
+            versionCode flutterVersionCode.toInteger()
+            versionName flutterVersionName
+            copy {
+                from 'src/adminProduction/'
+                include '*.json'
+                into '.'
+            }
+            resValue "string", "app_name", ""
+        }
+
+        userDevelopment {
+            dimension "app"
+            applicationId "com.example.user.dev"
+            versionCode flutterVersionCode.toInteger()
+            versionName flutterVersionName
+            copy {
+                from 'src/userDevelopment/'
+                include '*.json'
+                into '.'
+            }
+            resValue "string", "app_name", ""
+        }
+
+        userStage {
+            dimension "app"
+            applicationId "com.example.user.stg"
+            versionCode flutterVersionCode.toInteger()
+            versionName flutterVersionName
+            copy {
+                from 'src/userStage/'
+                include '*.json'
+                into '.'
+            }
+            resValue "string", "app_name", ""
+        }
+
+        userProduction {
+            dimension "app"
+            applicationId "com.example.user.prod"
+            versionCode flutterVersionCode.toInteger()
+            versionName flutterVersionName
+            copy {
+                from 'src/userProduction/'
+                include '*.json'
+                into '.'
+            }
+            resValue "string", "app_name", ""
+        }
+    }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'environment.dart';
 
 class DemoScreen extends StatefulWidget {
   const DemoScreen({super.key});
@@ -8,11 +9,29 @@ class DemoScreen extends StatefulWidget {
 }
 
 class _DemoScreenState extends State<DemoScreen> {
+  String? userRole;
+  String? environment;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    environment = '${Constants.whereAmI}';
+    userRole = (Constants.whoAmI == UR.admin) ? 'admin' : 'user';
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("I am in dev environment with user role",style: TextStyle(fontSize: 20),),
+    return MaterialApp(
+      title: 'My App',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: Text(
+            "I am in $environment environment with $userRole role",
+            style: const TextStyle(fontSize: 20),
+          ),
+        ),
       ),
     );
   }
