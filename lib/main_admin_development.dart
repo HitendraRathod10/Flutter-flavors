@@ -6,7 +6,6 @@ import 'environment.dart';
 import 'http_overrides.dart';
 
 void main() async {
-  HttpOverrides.global = MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
   Constants.setEnvironment(Environment.adminDev);
   runApp(const DemoScreen());

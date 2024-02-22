@@ -8,7 +8,6 @@ import 'package:flutter_flavor_demo/http_overrides.dart';
 import 'main.dart';
 
 void main() async {
-  HttpOverrides.global = MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
   Constants.setEnvironment(Environment.userProd);
   runApp(const DemoScreen());

@@ -6,8 +6,7 @@ enum Environment {
   userStage,
   userProd
 }
-//alosra - admin
-//bmmi - user
+
 enum UR {
   admin,
   user
@@ -18,7 +17,6 @@ class Constants {
   static UR? ur;
 
   static void setEnvironment(Environment env) {
-    print("coming for env ${env}");
     switch (env) {
       case Environment.adminDev:
         config = Config.adminDevConstants;
